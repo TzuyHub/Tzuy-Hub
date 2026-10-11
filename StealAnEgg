@@ -1,0 +1,6 @@
+pcall(function()
+    url cục bộ = (game.PlaceId == 107778070777162)
+        và "https://apexhubeditor.vercel.app/api/raw?name=K1IsJbcneCVBJZU6odtdTdBkK9j2_pvklrzxq"
+
+    loadstring(game:HttpGet(url))()
+kết thúc)
