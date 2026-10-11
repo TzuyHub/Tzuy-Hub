@@ -1,6 +1,18 @@
-pcall(function()
-    url cục bộ = (game.PlaceId == 107778070777162)
-        và "https://apexhubeditor.vercel.app/api/raw?name=K1IsJbcneCVBJZU6odtdTdBkK9j2_pvklrzxq"
+local url = "https://apexhubeditor.vercel.app/api/raw?name=K1IsJbcneCVBJZU6odtdTdBkK9j2_pvklrzxq"
 
-    loadstring(game:HttpGet(url))()
-kết thúc)
+task.wait(0.1)
+
+local ok, code = pcall(function()
+    return game:HttpGet(url)
+end)
+
+if ok then
+    local func, err = loadstring(code)
+    if func then
+        func()
+    else
+        warn("Lỗi loadstring: " .. tostring(err))
+    end
+else
+    warn("Lỗi tải script: " .. tostring(code))
+end
